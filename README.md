@@ -18,7 +18,7 @@ Poverty Free World is a web application aimed at empowering individuals from und
 - SQLAlchemy (Python SQL toolkit and Object-Relational Mapper)
 - HTML/CSS
 
-##Installation
+## Installation
 
 1.Clone the repository:
 
