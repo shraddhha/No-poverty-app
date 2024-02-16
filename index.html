@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>No poverty</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Welcome to a Poverty Free World!!!</h1>
+
+    <h2>Loans section</h2>
+    <ul>
+        {% for loan in loans %}
+        <li>{{ loan.lender }}: ${{ loan.amount }} for {{ loan.purpose }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Donations section</h2>
+    <ul>
+        {% for donation in donations %}
+        <li>{{ donation.donor }} donated ${{ donation.amount }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Free Courses</h2>
+    <ul>
+        {% for course in courses %}
+        <li>{{ course.title }} - {{ course.description }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Job Listings</h2>
+    <ul>
+        {% for job in jobs %}
+        <li>{{ job.title }} - {{ job.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

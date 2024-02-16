@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Apply for a Loan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Apply for a Loan</h1>
+    <form method="post" action="/apply_loan">
+        <label for="lender">Lender:</label>
+        <input type="text" id="lender" name="lender"><br>
+        <label for="amount">Loan Amount:</label>
+        <input type="text" id="amount" name="amount"><br>
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose" name="purpose"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
