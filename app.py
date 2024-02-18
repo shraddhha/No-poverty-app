@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///poverty_free.db'
 db = SQLAlchemy(app)
 
@@ -26,7 +26,8 @@ class Job(db.Model):
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text, nullable=False)
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 def index():
@@ -50,5 +51,5 @@ def apply_loan():
 
 # Similar routes for donation, course creation, job posting, etc.
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(debug=True)
